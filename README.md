@@ -1,13 +1,15 @@
-Sudoku Solver (WebAssembly + C++ backend + TensorFlow CNN)
+# Sudoku Solver
 
-A browser-based Sudoku solver that uses a TensorFlow-powered CNN to recognize digits from a camera feed, and a high-performance C++ backtracking solver compiled to WebAssembly to compute the solution on the client side.
+This project runs entirely in the browser. A TensorFlow model recognizes the digits from a Sudoku grid and a C++ backtracking solver, compiled to WebAssembly, computes the solution.
 
-Project Overview
+## Building the WebAssembly module
 
-This project implements a fully client‑side Sudoku solver in the browser:
+The solver is built with [Emscripten](https://emscripten.org/). After installing the SDK, generate the WebAssembly files with:
 
-Digit Recognition: A TensorFlow-based convolutional neural network (CNN) identifies the digits in a photographed or live video‐streamed 9×9 Sudoku grid.
+```bash
+npm run build:solver
+```
 
-Puzzle Solving: A performant C++ backtracking solver is compiled to WebAssembly for near‑native execution speed.
+This command executes `emmake make -C cpp-solver` and creates `cpp-solver/sudoku_wasm.js` and `cpp-solver/sudoku_wasm.wasm`.
 
-Web Interface: A lightweight JavaScript/HTML front‑end orchestrates camera access, digit detection, solution rendering, and user interaction—all without any server dependency.
+Once built, open `index.html` in a browser to try the solver.

@@ -1,4 +1,4 @@
-import initWasmModule, { solve } from "../../rust-solver/pkg/sudoku_wasm.js";
+import initWasmModule, { solve } from "../../cpp-solver/sudoku_wasm.js";
 
 const init = async () => {
   await initWasmModule();
