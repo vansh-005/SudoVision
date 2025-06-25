@@ -66,6 +66,7 @@ const run = async (captureFromVideo = true) => {
   threshold(rescaledBuffer);
   renderStep(0, showStep, rescaledBuffer);
 
+  
   const { coords, countourBuffer } = findSudokuGrid(rescaledBuffer);
   renderStep(1, showStep, countourBuffer);
 
