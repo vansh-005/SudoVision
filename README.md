@@ -10,6 +10,7 @@ The solver is built with [Emscripten](https://emscripten.org/). After installing
 npm run build:solver
 ```
 
+
 This command executes `emmake make -C cpp-solver` and creates `cpp-solver/sudoku_wasm.js` and `cpp-solver/sudoku_wasm.wasm`.
 
 Once built, open `index.html` in a browser to try the solver.
