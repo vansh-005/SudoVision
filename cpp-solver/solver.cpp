@@ -5,6 +5,7 @@ extern "C" {
 
 static char result_buffer[82];
 
+
 bool is_valid(int grid[9][9], int row, int col, int num) {
     for (int x = 0; x < 9; ++x) {
         if (grid[row][x] == num || grid[x][col] == num)
@@ -18,6 +19,8 @@ bool is_valid(int grid[9][9], int row, int col, int num) {
                 return false;
     return true;
 }
+
+//
 
 bool solve_recursive(int grid[9][9], int row, int col) {
     if (row == 9)
